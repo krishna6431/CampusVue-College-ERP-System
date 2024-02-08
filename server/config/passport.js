@@ -10,7 +10,7 @@ dotenv.config();
 
 const opts = {};
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = "mySecretKey123";
+opts.secretOrKey = "mr_krishna_jwt_secret";
 
 module.exports = (passport) => {
   passport.use(

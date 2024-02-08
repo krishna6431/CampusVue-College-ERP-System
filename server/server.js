@@ -55,12 +55,6 @@ app.get("/getStudent", function (req, res) {
   res.json({ "key": "success" })
 })
 
-// //404 Route Error
-// app.use((req, res, next) => {
-//   const error = new Error("Invalid Route");
-//   error.status = 404;
-//   next(error);
-// });
 
 //Error Handler
 app.use((error, req, res, next) => {
@@ -74,8 +68,6 @@ app.use((error, req, res, next) => {
 
 const PORT = process.env.PORT || 3301;
 
-//Connect to MongoDB
-console.log(process.env.DB_URI)
 mongoose
   .connect(process.env.DB_URI)
   .then((data) => {
