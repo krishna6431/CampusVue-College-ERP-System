@@ -9,7 +9,7 @@ const dotenv = require("dotenv");
 
 //config (this is important)
 dotenv.config({
-  path: "/home/krishna/Desktop/mern-college-erp-master/mern-college-erp-master/server/config/config.env",
+  path: "./config/config.env"
 });
 
 //Setup Middlewares
@@ -71,6 +71,7 @@ app.use((error, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 //Connect to MongoDB
+console.log(process.env.DB_URI)
 mongoose
   .connect(process.env.DB_URI)
   .then((data) => {
